@@ -8,10 +8,9 @@ int solution(int a, int b, int n) {
     
     while(n >= a)
     {
-        int i = n / a;
-        int j = i * b;
-        n = (n % a) + j;
-        answer += j;
+        int i = (n/a) * b;
+        n = (n % a) + i;
+        answer += i;
     }
     return answer;
 }
