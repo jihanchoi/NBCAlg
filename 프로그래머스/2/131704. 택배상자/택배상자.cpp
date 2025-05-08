@@ -6,13 +6,13 @@ using namespace std;
 
 int solution(vector<int> order) {
     int answer = 0;
-    stack<int> s;
+    stack<int> sub;
     
     for (int i=1; i<=order.size(); i++) {
-        s.push(i);
+        sub.push(i);
         
-        while (!s.empty() && s.top() == order[answer]) {
-            s.pop();
+        while (!sub.empty() && sub.top() == order[answer]) {
+            sub.pop();
             answer++;
         }
     }
