@@ -6,39 +6,39 @@ using namespace std;
 vector<int> solution(int n) 
 {
 	vector<int> answer;
-	vector<vector<int>> snail(n, vector<int>(n));
-	int value = 1, way = 0, y = 0, x = 0;
+	vector<vector<int>> result(n, vector<int>(n));
+	int value = 1, order = 0, x = 0, y = 0;
 
 	for (int i = 0; i < n; i++)
 	{
-		switch (way)
+		switch (order)
 		{
 		case 0:
 			for (int j = i; j < n; j++)
 			{
-				snail[y++][x] = value++;
+				result[x++][y] = value++;
 			}
-			y--;
-			x++;
-			way = 1;
+			x--;
+			y++;
+			order = 1;
 			break;
 		case 1:
 			for (int j = i; j < n; j++)
 			{
-				snail[y][x++] = value++;
+				result[x][y++] = value++;
 			}
-			y--;
-			x -= 2;
-			way = 2;
+			x--;
+			y -= 2;
+			order = 2;
 			break;
 		case 2:
 			for (int j = i; j < n; j++)
 			{
-				snail[y--][x--] = value++;
+				result[x--][y--] = value++;
 			}
-			y += 2;
-			x++;
-			way = 0;
+			x += 2;
+			y++;
+			order = 0;
 			break;
 		}
 	}
@@ -47,7 +47,7 @@ vector<int> solution(int n)
 	{
 		for (int j = 0; j < i + 1; j++)
 		{
-			answer.push_back(snail[i][j]);
+			answer.push_back(result[i][j]);
 		}
 	}
 
