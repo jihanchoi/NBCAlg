@@ -11,7 +11,7 @@ int solution(vector<int> queue1, vector<int> queue2) {
     int q2Start = queue1.size();
     int q2End = queue1.size()*2 - 1;
     int size = queue1.size() * 2;
-    long long sum1 = 0, sum2 = 0;
+    unsigned int sum1 = 0, sum2 = 0;
         
     for (int q1: queue1) {
         sum1 += q1;
@@ -41,3 +41,6 @@ int solution(vector<int> queue1, vector<int> queue2) {
 // 삽입, 삭제를 하지 않기위해 벡터 하나를 이용 
 // 위치를 이용하여 값을 계산 -> 위치 값이 사이즈를 넘어갈 경우 대비
 // 특정 케이스에서 실패
+// 검색 후 sum을 int -> longlong으로 변경후 통과um을 int -> longlong으로 변경후 통과
+// longlong -> unsigned int 사용 
+// 제한사한은 꼭 보자
